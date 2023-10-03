@@ -1,0 +1,164 @@
+.infinity-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+body{
+    background: #00c6ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+@media (min-width: 768px) {
+    .infinity-container {
+        background: url('')   no-repeat;
+    }
+    .infinity-form {
+        box-shadow: 6px 5px 8px hsla(0, 9%, 78%, 0.1);
+        border-radius: 10px;
+        width: 28rem;
+        background: #d9f1e9;
+
+    }
+ 
+}
+.h1{
+    
+    padding-left: 25rem;
+    /* background-color:  black; */
+    color: #fff;
+    font-weight: bold;
+
+    
+    
+}
+.h2{
+    
+    padding-left: 35rem;
+    
+    color: #c10808;
+   
+}
+.h2:link{
+    text-decoration: none;
+
+}
+.h2:hover{
+    color: #940a0a;
+
+}
+
+
+
+.infinity-form h4 {
+    font-weight: bold;
+    font-size:25px;
+}
+
+.infinity-form .form-input
+{
+    position: relative;
+}
+
+.infinity-form .form-input input
+{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid #777;
+    outline: none;
+    background: transparent;
+    padding-left: 40px;
+    font-weight: bold;
+    color: #777;
+}
+
+.infinity-form .form-input span {
+    position: absolute;
+    top: 8px;
+    padding-left: 10px;
+    color: #777;
+}
+
+.infinity-form .form-input input::placeholder {
+    padding-left: 0px;
+}
+
+.infinity-form .form-input input:focus,
+.infinity-form .form-input input:valid
+{
+    border-bottom: 2px solid #57b894;
+}
+
+.infinity-form .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #4ea585 !important;
+  border:0px;
+}
+
+.infinity-form button[type="submit"] {
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #4ea585, #57b894);
+    color: #fff;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+
+.infinity-form button[type="submit"]:hover {
+    background: linear-gradient(45deg, #57b894, #4ea585);
+}
+
+.forget-link , .login-link , .register-link {
+    color: #57b894;
+    font-weight: bold;
+}
+
+.forget-link:hover , .login-link:hover , .register-link:hover {
+    color: #4ea585;
+    text-decoration: none;
+}
+
+.infinity-form .btn-social {
+    color: #fff;
+    border: 0;
+    display: inline-block;
+    font-weight: bold;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    margin: 0px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.infinity-form .btn-facebook {
+    background: #4866a8;
+}
+
+.infinity-form .btn-google {
+    background: #da3f34;
+}
+
+.infinity-form .btn-twitter {
+    background: #33ccff;
+}
+
+.infinity-form .btn-facebook:hover {
+    background: hsla(221, 40%, 40%, 1);
+}
+
+.infinity-form .btn-google:hover {
+    background: hsla(4, 59%, 47%, 1);
+}
+
+.infinity-form .btn-twitter:hover {
+    background: hsla(195, 78%, 54%, 1);
+}

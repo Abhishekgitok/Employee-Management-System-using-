@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Salary Management System</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="salaryList">
+                <!-- Salary entries will be added here dynamically -->
+            </tbody>
+        </table>
+        <h3>Add Employee</h3>
+        <input type="text" id="employeeName" placeholder="Employee Name">
+        <input type="number" id="employeeSalary" placeholder="Employee Salary">
+        <button onclick="addSalary()">Add Salary</button>
+        <h3>Total Salary: <span id="totalSalary">0</span></h3>
+    </div>
+
+    <script>
+        const salaryList = document.getElementById("salaryList");
+        const employeeName = document.getElementById("employeeName");
+        const employeeSalary = document.getElementById("employeeSalary");
+        const totalSalary = document.getElementById("totalSalary");
+
+        let salaries = [];
+
+        function addSalary() {
+            const name = employeeName.value;
+            const salary = parseInt(employeeSalary.value);
+
+            if (name && !isNaN(salary) && salary > 0) {
+                salaries.push({ name, salary });
+                updateSalaryList();
+                calculateTotalSalary();
+                clearInputFields();
+            }
+        }
+
+        function updateSalaryList() {
+            salaryList.innerHTML = "";
+            salaries.forEach((item, index) => {
+                const row = `<tr>
+                    <td>${item.name}</td>
+                    <td>$${item.salary}</td>
+                    <td><button onclick="deleteSalary(${index})">Delete</button></td>
+                </tr>`;
+                salaryList.innerHTML += row;
+            });
+        }
+
+        function calculateTotalSalary() {
+            const total = salaries.reduce((acc, item) => acc + item.salary, 0);
+            totalSalary.textContent = `$${total}`;
+        }
+
+        function deleteSalary(index) {
+            salaries.splice(index, 1);
+            updateSalaryList();
+            calculateTotalSalary();
+        }
+
+        function clearInputFields() {
+            employeeName.value = "";
+            employeeSalary.value = "";
+        }
+    </script>
+</body>
+</html>
